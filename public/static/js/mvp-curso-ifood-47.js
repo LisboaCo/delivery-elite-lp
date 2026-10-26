@@ -30,7 +30,7 @@
     if (window.DE) window.DE.track("click_cta", payload);
     // The legacy GTM link trigger is restricted to .js-cta (VSL pages).
     // This LP deliberately keeps .checkout: do not fire the old product's tags.
-    var gaParams = Object.assign({}, params, payload, { transport_type: "beacon" });
+    var gaParams = Object.assign({}, params, payload, { send_to: "G-JTMPLWFWDP", transport_type: "beacon" });
     function googleEvent() { window.dataLayer = window.dataLayer || []; window.dataLayer.push(arguments); }
     try {
       (typeof window.gtag === "function" ? window.gtag : googleEvent)("event", "cta_click", gaParams);
