@@ -2,6 +2,12 @@
 
 ## Publicação autorizada em 03/11/2026
 
+**Correção posterior de Otavio em 03/11:** publicar somente a LP. Retirar
+`public/apresentacao-webinar.pdf` da hospedagem; apresentação apenas como arquivo
+local e no Drive. Automação será feita por Otavio com Claude em 04/11.
+Manter LP em preview até conectar e testar o cadastro, destinos e rastreamento.
+O registro de publicação do PDF abaixo é histórico, superado por esta correção.
+
 Otavio confirmou a pasta `LP DELIVERY ELITE` e solicitou publicar a LP e o PDF atualizado após a reunião. Usar este repositório, branch `main`, no projeto Cloudflare Pages existente `delivery-elite-lp`. A publicação substitui a restrição de preparação local descrita no histórico abaixo.
 
 - Página: `/webinar` (preview, cadastro desativado até integrar e testar o Kommo).

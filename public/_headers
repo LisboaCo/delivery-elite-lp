@@ -4,6 +4,3 @@
   Permissions-Policy: camera=(), microphone=(), geolocation=()
   X-Frame-Options: SAMEORIGIN
 
-/apresentacao-webinar.pdf
-  X-Robots-Tag: noindex, nofollow
-  Content-Disposition: inline; filename="Webinar-Eric-10-11-2026.pdf"
