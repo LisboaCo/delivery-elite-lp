@@ -24,7 +24,7 @@ export function allowedUrl(value, kind) {
 }
 export function collectionReady(config) {
   return config.mode === 'live' && config.registrationOpen === true && config.dateConfirmed === true &&
-    Boolean(allowedUrl(config.endpoint, 'endpoint')) && Boolean(String(config.privacyContact || '').trim());
+    Boolean(allowedUrl(config.endpoint, 'endpoint'));
 }
 export function confirmedRegistration(response, data) {
   return response.ok && data?.ok === true && typeof data.registrationId === 'string' && data.registrationId.trim().length > 0;

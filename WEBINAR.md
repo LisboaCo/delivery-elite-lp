@@ -69,7 +69,7 @@ POST JSON para o endpoint configurado:
   "name": "Nome informado",
   "whatsapp": "55DD9XXXXXXXX",
   "consent": true,
-  "consent_version": "webinar-2026-11-v1",
+  "consent_version": "webinar-2026-11-v2",
   "utms": {"utm_source":"meta", "utm_campaign":"webinar"},
   "page_path": "/webinar",
   "submitted_at": "ISO 8601"

@@ -14,7 +14,7 @@ test('Nome e consentimento são obrigatórios',()=>{
 test('Cadastro exige ativação explícita e configuração completa',()=>{
   const complete={mode:'live',registrationOpen:true,dateConfirmed:true,endpoint:'https://example.com/webinar',privacyContact:'Equipe Delivery Elite'};
   assert.equal(collectionReady(complete),true);
-  for(const [key,value] of [['mode','preview'],['registrationOpen',false],['dateConfirmed',false],['endpoint',''],['privacyContact','']]) assert.equal(collectionReady({...complete,[key]:value}),false);
+  for(const [key,value] of [['mode','preview'],['registrationOpen',false],['dateConfirmed',false],['endpoint','']]) assert.equal(collectionReady({...complete,[key]:value}),false);
 });
 test('HTTP 200 sem comprovante não confirma inscrição',()=>{
   for(const data of [{},{ok:true},{ok:true,registrationId:''},{ok:false,registrationId:'id'}]) assert.equal(confirmedRegistration({ok:true},data),false);

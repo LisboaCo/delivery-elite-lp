@@ -118,7 +118,7 @@ form.addEventListener('submit', async event => {
     const response = await fetch(config.endpoint, {
       method:'POST', headers:{'Content-Type':'application/json'}, credentials:'omit', signal:controller.signal,
       body:JSON.stringify({event_id:config.eventId, request_id:attemptId, name:values.name, whatsapp:values.phone,
-        consent:true, consent_version:'webinar-2026-11-v1', utms, page_path:location.pathname, submitted_at:new Date().toISOString()})
+        consent:true, consent_version:'webinar-2026-11-v2', utms, page_path:location.pathname, submitted_at:new Date().toISOString()})
     });
     let data; try { data = await response.json(); } catch { throw new Error('invalid-response'); }
     if (!confirmedRegistration(response, data)) throw new Error('not-confirmed');
