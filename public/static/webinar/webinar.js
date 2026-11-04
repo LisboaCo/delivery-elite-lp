@@ -58,6 +58,14 @@ function track(event, payload = {}) {
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({event, webinar_id: config.eventId, ...utms, ...payload});
 }
+// O GTM não tem tag para esta rota: a conversão sai daqui, sem nome nem telefone.
+function trackRegistration() {
+  if (preview || config.trackingEnabled !== true) return;
+  function googleEvent() { window.dataLayer = window.dataLayer || []; window.dataLayer.push(arguments); }
+  try { googleEvent('event', 'generate_lead', {send_to: 'G-JTMPLWFWDP', webinar_id: config.eventId, ...utms}); } catch {}
+  try { if (typeof window.clarity === 'function') window.clarity('event', 'webinar_registration_success'); } catch {}
+  try { if (typeof window.fbq === 'function') window.fbq('track', 'Lead', {content_name: config.eventId}); } catch {}
+}
 
 if (!preview) $('review-note').hidden = true;
 if (config.privacyContact) { $('privacy-contact').textContent = `Para falar com a equipe sobre seus dados: ${config.privacyContact}`; $('privacy-contact').hidden = false; }
@@ -123,6 +131,7 @@ form.addEventListener('submit', async event => {
     let data; try { data = await response.json(); } catch { throw new Error('invalid-response'); }
     if (!confirmedRegistration(response, data)) throw new Error('not-confirmed');
     track('webinar_registration_success');
+    trackRegistration();
     form.reset(); attemptId = null; showConfirmation(false);
   } catch {
     $('form-status').textContent = 'Não conseguimos confirmar sua inscrição. Confira sua conexão e tente novamente. Seus dados continuam no formulário.';

@@ -8,6 +8,6 @@ window.WEBINAR_CONFIG = Object.freeze({
   groupUrl: 'https://chat.whatsapp.com/E0WjXOQrKNJ8PdbAqOyBCY',
   liveUrl: '',
   privacyContact: '',
-  trackingEnabled: false,
+  trackingEnabled: true,
   gtmId: 'GTM-WG68M2TS'
 });

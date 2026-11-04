@@ -78,6 +78,8 @@ POST JSON para o endpoint configurado:
 
 O n8n deve acrescentar horário de recebimento do servidor. UTMs são capturadas da URL desta página e não são dados confiáveis para autorização. Nome e telefone não são colocados na URL, no dataLayer ou no armazenamento local. Sem envio real na prévia.
 
+Medição ativa desde 04/11/2026: GTM auditado sem alteração; visita vem das tags de todas as páginas (GA4, Clarity, Pixel). A inscrição confirmada sai de `webinar.js`: `generate_lead` para `G-JTMPLWFWDP`, evento Clarity `webinar_registration_success` e Pixel `Lead`. Formulário mascarado no Clarity.
+
 Eventos previstos: `webinar_form_cta`, `webinar_registration_success`, `webinar_group_invite_click` e `webinar_live_click`. Clique no convite não comprova participação no grupo. O GTM existente é `GTM-WG68M2TS`; `tracking.js` é carregado apenas no modo público com tracking ativado.
 
 ## Validação local em 02/11/2026
