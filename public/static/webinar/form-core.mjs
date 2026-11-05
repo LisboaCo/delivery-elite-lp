@@ -24,6 +24,10 @@ export function validateForm({ name, phone, consent }) {
   if (!consent) errors.consent = 'Confirme que deseja receber os avisos desta aula.';
   return { errors, name: normalizedName, phone: normalizedPhone };
 }
+// O botão de envio só libera quando os três campos passam na mesma validação do envio.
+export function formComplete(values) {
+  return Object.keys(validateForm(values).errors).length === 0;
+}
 export function allowedUrl(value, kind) {
   try {
     const u = new URL(value);

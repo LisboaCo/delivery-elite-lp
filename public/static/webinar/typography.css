@@ -48,6 +48,9 @@ h3 { line-height: 1.28; }
 .button { background: linear-gradient(115deg,#ce1630,#b70e28); filter: none; }
 .button:hover { background: linear-gradient(115deg,#bd102a,#a30b22); filter: none; }
 .button:disabled { background: linear-gradient(115deg,#ce1630,#b70e28); }
+.form-card #submit-button:disabled { opacity: .45; cursor: not-allowed; }
+.submit-hint { margin: 10px 0 0; font-size: 12px; line-height: 1.5; text-align: center; opacity: .8; }
+.submit-hint[hidden] { display: none; }
 @media(max-width:760px) {
   .event-meta { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; }
   .event-meta p { min-width: 0; padding-right: 10px; }

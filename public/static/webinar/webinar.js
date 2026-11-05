@@ -1,4 +1,4 @@
-import {formatPhoneInput, validateForm, collectionReady, allowedUrl, confirmedRegistration, attribution} from './form-core.mjs';
+import {formatPhoneInput, validateForm, formComplete, collectionReady, allowedUrl, confirmedRegistration, attribution} from './form-core.mjs';
 
 const config = window.WEBINAR_CONFIG || {};
 const preview = config.mode !== 'live';
@@ -13,6 +13,16 @@ const groupUrl = allowedUrl(config.groupUrl, 'group');
 const liveUrl = allowedUrl(config.liveUrl, 'live');
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const scrollBehavior = reducedMotion ? 'instant' : 'smooth';
+// Tempo para o Pixel, o GA4 e o Clarity enviarem a inscrição antes de sair da página.
+const REDIRECT_DELAY_MS = 600;
+
+// O botão só fica clicável com nome, WhatsApp e aceite válidos.
+function updateSubmit() {
+  if (!ready || busy) return;
+  const complete = formComplete({name:$('nome').value, phone:$('whatsapp').value, consent:$('consent').checked});
+  submit.disabled = !complete;
+  $('submit-hint').hidden = complete;
+}
 
 // Todos os convites da página conduzem ao mesmo formulário.
 document.querySelectorAll('a[href="#inscricao"]').forEach(link => link.addEventListener('click', event => {
@@ -74,6 +84,7 @@ if (!ready) {
   submit.textContent = 'Inscrições em preparação';
   $('form-status').textContent = preview ? 'Esta é uma demonstração. Nenhum cadastro é enviado.' : 'As inscrições ainda não estão abertas. Volte em breve.';
   form.querySelectorAll('input').forEach(input => { input.disabled = true; });
+  $('submit-hint').hidden = true;
 }
 if (preview && new URLSearchParams(location.search).get('review') === '1') {
   const demo = document.createElement('button');
@@ -107,6 +118,10 @@ $('group-link').addEventListener('click', () => track('webinar_group_invite_clic
 $('live-link').addEventListener('click', () => track('webinar_live_click'));
 document.querySelectorAll('[data-cta]').forEach(a => a.addEventListener('click', () => track('webinar_form_cta', {cta_label:a.dataset.cta})));
 form.addEventListener('input', () => { attemptId = null; });
+// O input do telefone formata antes de o evento chegar aqui; change e pageshow cobrem preenchimento automático e voltar do WhatsApp.
+['input','change'].forEach(type => form.addEventListener(type, updateSubmit));
+window.addEventListener('pageshow', updateSubmit);
+updateSubmit();
 $('whatsapp').addEventListener('input', event => {
   if (event.isComposing) return;
   const field = event.target;
@@ -153,9 +168,16 @@ form.addEventListener('submit', async event => {
     track('webinar_registration_success');
     trackRegistration();
     form.reset(); attemptId = null; showConfirmation(false);
+    if (groupUrl) {
+      // O botão continua na tela como alternativa, caso o navegador não abra o WhatsApp.
+      $('success-title').textContent = 'Abrindo o grupo da aula…';
+      $('success-description').textContent = 'Sua inscrição foi recebida. Se o grupo não abrir sozinho, toque no botão abaixo.';
+      track('webinar_group_invite_click', {cta_label:'redirect_automatico'});
+      setTimeout(() => location.assign(groupUrl), REDIRECT_DELAY_MS);
+    }
   } catch {
     $('form-status').textContent = 'Não conseguimos confirmar sua inscrição. Confira sua conexão e tente novamente. Seus dados continuam no formulário.';
   } finally {
-    clearTimeout(timer); busy = false; submit.disabled = false; submit.innerHTML = 'Quero participar gratuitamente <span aria-hidden="true">↗</span>';
+    clearTimeout(timer); busy = false; submit.innerHTML = 'Quero participar gratuitamente <span aria-hidden="true">↗</span>'; updateSubmit();
   }
 });

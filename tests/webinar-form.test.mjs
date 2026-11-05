@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {normalizePhone, formatPhoneInput, validateForm, collectionReady, allowedUrl, confirmedRegistration, attribution} from '../public/static/webinar/form-core.mjs';
+import {normalizePhone, formatPhoneInput, validateForm, formComplete, collectionReady, allowedUrl, confirmedRegistration, attribution} from '../public/static/webinar/form-core.mjs';
 test('Telefone brasileiro aceita formatos comuns e rejeita incompletos',()=>{
   assert.equal(normalizePhone('(11) 99999-1234'),'5511999991234');
   assert.equal(normalizePhone('+55 11 99999-1234'),'5511999991234');
@@ -18,6 +18,14 @@ test('Nome e consentimento são obrigatórios',()=>{
   assert.deepEqual(validateForm({name:'  João   Silva ',phone:'11999991234',consent:true}).errors,{});
   assert.ok(validateForm({name:'a1',phone:'11999991234',consent:false}).errors.name);
   assert.ok(validateForm({name:'João',phone:'11999991234',consent:false}).errors.consent);
+});
+test('Botão só libera com nome, WhatsApp e aceite válidos',()=>{
+  assert.equal(formComplete({name:'',phone:'',consent:false}),false);
+  assert.equal(formComplete({name:'João',phone:'',consent:true}),false);
+  assert.equal(formComplete({name:'João',phone:'(11) 99999',consent:true}),false);
+  assert.equal(formComplete({name:'J',phone:'(11) 99999-1234',consent:true}),false);
+  assert.equal(formComplete({name:'João',phone:'(11) 99999-1234',consent:false}),false);
+  assert.equal(formComplete({name:'João',phone:'(11) 99999-1234',consent:true}),true);
 });
 test('Cadastro exige ativação explícita e configuração completa',()=>{
   const complete={mode:'live',registrationOpen:true,dateConfirmed:true,endpoint:'https://example.com/webinar',privacyContact:'Equipe Delivery Elite'};
