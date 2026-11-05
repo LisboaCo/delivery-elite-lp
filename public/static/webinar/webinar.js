@@ -1,4 +1,4 @@
-import {validateForm, collectionReady, allowedUrl, confirmedRegistration, attribution} from './form-core.mjs';
+import {formatPhoneInput, validateForm, collectionReady, allowedUrl, confirmedRegistration, attribution} from './form-core.mjs';
 
 const config = window.WEBINAR_CONFIG || {};
 const preview = config.mode !== 'live';
@@ -107,6 +107,26 @@ $('group-link').addEventListener('click', () => track('webinar_group_invite_clic
 $('live-link').addEventListener('click', () => track('webinar_live_click'));
 document.querySelectorAll('[data-cta]').forEach(a => a.addEventListener('click', () => track('webinar_form_cta', {cta_label:a.dataset.cta})));
 form.addEventListener('input', () => { attemptId = null; });
+$('whatsapp').addEventListener('input', event => {
+  if (event.isComposing) return;
+  const field = event.target;
+  const raw = field.value;
+  const caret = field.selectionStart ?? raw.length;
+  const atEnd = caret >= raw.length;
+  const digitsBeforeCaret = raw.slice(0, caret).replace(/\D/g, '').length;
+  const formatted = formatPhoneInput(raw);
+  if (formatted !== raw) field.value = formatted;
+  let position = formatted.length;
+  if (!atEnd) {
+    let seen = 0;
+    position = 0;
+    while (position < formatted.length && seen < digitsBeforeCaret) {
+      if (/\d/.test(formatted[position])) seen += 1;
+      position += 1;
+    }
+  }
+  try { field.setSelectionRange(position, position); } catch {}
+});
 form.addEventListener('submit', async event => {
   event.preventDefault();
   if (!ready || busy) return;

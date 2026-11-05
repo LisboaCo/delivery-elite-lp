@@ -1,10 +1,18 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {normalizePhone, validateForm, collectionReady, allowedUrl, confirmedRegistration, attribution} from '../public/static/webinar/form-core.mjs';
+import {normalizePhone, formatPhoneInput, validateForm, collectionReady, allowedUrl, confirmedRegistration, attribution} from '../public/static/webinar/form-core.mjs';
 test('Telefone brasileiro aceita formatos comuns e rejeita incompletos',()=>{
   assert.equal(normalizePhone('(11) 99999-1234'),'5511999991234');
   assert.equal(normalizePhone('+55 11 99999-1234'),'5511999991234');
   for (const phone of ['', '1199991234', '0011999991234']) assert.equal(normalizePhone(phone),null);
+});
+test('Máscara aceita só números, até 11 dígitos, no formato brasileiro',()=>{
+  const casos=[['',''],['abc',''],['1','(1'],['11','(11'],['119','(11) 9'],['1199999','(11) 99999'],['11999991','(11) 99999-1'],
+    ['11999991234','(11) 99999-1234'],['119999912345678','(11) 99999-1234'],['abc11999991234xyz','(11) 99999-1234'],
+    ['+55 11 99999-1234','(11) 99999-1234'],['5511999991234','(11) 99999-1234'],['011999991234','(11) 99999-1234'],
+    ['55999991234','(55) 99999-1234'],['559999912345','(55) 99999-1234']];
+  for (const [entrada,esperado] of casos) assert.equal(formatPhoneInput(entrada),esperado);
+  assert.equal(normalizePhone(formatPhoneInput('abc11999991234xyz')),'5511999991234');
 });
 test('Nome e consentimento são obrigatórios',()=>{
   assert.deepEqual(validateForm({name:'  João   Silva ',phone:'11999991234',consent:true}).errors,{});

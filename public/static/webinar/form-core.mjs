@@ -4,6 +4,17 @@ export function normalizePhone(value) {
   if (!/^[1-9]\d9\d{8}$/.test(digits)) return null;
   return `55${digits}`;
 }
+// Máscara do campo: só números, no máximo 11 dígitos, no formato (11) 99999-1234.
+// O 55 só sai com 13 dígitos (número colado com o país), porque 55 também é DDD.
+export function formatPhoneInput(value) {
+  let digits = String(value || '').replace(/\D/g, '').replace(/^0+/, '');
+  if (digits.length === 13 && digits.startsWith('55')) digits = digits.slice(2);
+  digits = digits.slice(0, 11);
+  if (!digits) return '';
+  if (digits.length <= 2) return `(${digits}`;
+  if (digits.length <= 7) return `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
+  return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
+}
 export function validateForm({ name, phone, consent }) {
   const errors = {};
   const normalizedName = String(name || '').trim().replace(/\s+/g, ' ');
