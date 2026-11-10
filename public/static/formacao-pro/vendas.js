@@ -1,6 +1,6 @@
 'use strict';
-// Preparação local: ativar somente após conferir o checkout e a janela comercial.
-const offer = Object.freeze({ enabled: true, checkout: 'https://pay.hotmart.com/T108312124M', opensAt: '2026-11-10T23:00:00Z' });
+// Oferta PRO conferida com os dois bumps; sem encerramento automático do carrinho.
+const offer = Object.freeze({ enabled: true, checkout: 'https://pay.hotmart.com/T108312124M?off=a8up7pad&checkoutMode=10', opensAt: '2026-11-10T23:00:00Z' });
 const offerIsOpen = () => offer.enabled && Date.now() >= Date.parse(offer.opensAt);
 const dialog = document.getElementById('aviso');
 document.getElementById('comprar').addEventListener('click', () => {
