@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Formação Gestores de Delivery PRO | Eric Roza</title>
 <meta name="description" content="Aprenda a analisar e gerenciar operações no iFood, 99Food e Keeta. Formação com Eric Roza, análises gravadas e aulas adicionais de IA e farmácia com liberação posterior.">
-<meta name="theme-color" content="#41000b">
+<meta name="theme-color" content="#09090b">
 <link rel="icon" href="/static/img/logo-mark.png" type="image/png">
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -13,152 +13,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-WG68M2TS');</script>
 <script src="/static/tracking.js"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root { --red:#ec0920; --red-dark:#a90518; --red-deep:#41000b; --ink:#171116; --muted:#6c6265; --paper:#fffdfd; --line:#eadfe1; --shadow:0 22px 65px rgba(49,0,8,.12); }
-  * { box-sizing:border-box; }
-  html { scroll-behavior:smooth; }
-  body { margin:0; background:var(--paper); color:var(--ink); font-family:'DM Sans',Arial,sans-serif; overflow-x:hidden; }
-  a { color:inherit; }
-  img { display:block; max-width:100%; }
-  .wrap { width:min(1160px, calc(100% - 40px)); margin:0 auto; }
-  .eyebrow { display:flex; align-items:center; gap:10px; margin:0 0 18px; color:var(--red); font-size:12px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; }
-  .eyebrow::before { content:''; width:30px; height:3px; border-radius:10px; background:currentColor; }
-  .section-title { max-width:700px; margin:0; font-family:'Space Grotesk',Arial,sans-serif; font-size:clamp(30px,3.6vw,50px); line-height:1.02; letter-spacing:-.05em; }
-  .section-title em { color:var(--red); font-style:normal; }
-  .section-lead { max-width:680px; margin:20px 0 0; color:var(--muted); font-size:17px; line-height:1.65; }
-  .btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:56px; padding:0 27px; border:1px solid transparent; border-radius:99px; background:var(--red); color:#fff; font-size:15px; font-weight:700; text-decoration:none; box-shadow:0 12px 30px rgba(236,9,32,.25); transition:transform .2s ease, box-shadow .2s ease, background .2s ease; }
-  .btn:hover { background:#c9071c; box-shadow:0 16px 35px rgba(236,9,32,.32); transform:translateY(-2px); }
-  .btn--light { background:#fff; color:var(--red); box-shadow:0 14px 30px rgba(0,0,0,.16); }
-  .btn--light:hover { background:#fff4f5; }
-  .btn--animated { animation:cta-pulse 2.4s ease-in-out infinite; }
-  @keyframes cta-pulse { 0%,100% { transform:translateY(0); box-shadow:0 12px 30px rgba(236,9,32,.24); } 50% { transform:translateY(-3px); box-shadow:0 18px 40px rgba(236,9,32,.38); } }
-
-  .hero { position:relative; padding:130px 0 0; background:var(--red-deep); color:#fff; overflow:hidden; }
-  .hero::after { content:''; position:absolute; right:-120px; top:-160px; width:520px; height:520px; border-radius:50%; background:radial-gradient(circle,rgba(236,9,32,.55),transparent 70%); }
-  .hero-nav { position:absolute; inset:0 0 auto; z-index:2; display:flex; justify-content:space-between; align-items:center; padding:26px 0; }
-  .hero-nav img { height:60px; }
-  .hero-content { position:relative; z-index:1; max-width:720px; margin:40px auto 90px; text-align:center; }
-  .hero-tag { display:inline-flex; margin:0 auto 22px; padding:8px 16px; border:1px solid rgba(255,255,255,.35); border-radius:99px; color:#ffd4d8; font-size:12px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; }
-  h1 { margin:0 auto; font-family:'Space Grotesk',Arial,sans-serif; font-size:clamp(36px,4.6vw,58px); line-height:1.03; letter-spacing:-.045em; }
-  h1 span { color:#ffbdc3; }
-  .hero-content p { max-width:560px; margin:24px auto 34px; color:#ffe9eb; font-size:18px; line-height:1.6; }
-  .hero-note { display:flex; justify-content:center; align-items:center; gap:10px; margin-top:18px; color:#ffd4d8; font-size:12px; }
-  .hero-marquee { display:block; width:100%; overflow:hidden; background:#fff; color:var(--red); font-size:12px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; white-space:nowrap; }
-  .hero-marquee-track { display:flex; width:max-content; padding:15px 0; animation:hero-marquee-move 26s linear infinite; }
-  .hero-marquee span { padding:0 24px; }
-  @keyframes hero-marquee-move { to { transform:translateX(-50%); } }
-
-  .intro { padding:100px 0 110px; background:#fff; }
-  .intro-head { text-align:center; }
-  .intro-head .eyebrow { justify-content:center; }
-  .intro-head .section-title { max-width:none; margin:0 auto; }
-  .audience-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1px; max-width:900px; margin:50px auto 0; border:1px solid var(--line); background:var(--line); }
-  .audience-item { min-height:150px; padding:28px; background:#fff; }
-  .audience-item strong { display:block; margin-bottom:11px; font-family:'Space Grotesk',Arial,sans-serif; font-size:19px; letter-spacing:-.03em; }
-  .audience-item p { margin:0; color:var(--muted); font-size:15px; line-height:1.55; }
-  .audience-item b { color:var(--red); }
-
-  .depoimentos { padding:110px 0; background:#fafafa; }
-  .depoimentos-head { text-align:center; }
-  .depoimentos-head .eyebrow { justify-content:center; }
-  .depoimentos-head .section-title { max-width:640px; margin:0 auto; }
-  .depoimentos-head .section-lead { max-width:600px; margin:20px auto 0; }
-  .depoimentos-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px; max-width:1160px; margin:56px auto 0; align-items:start; }
-  .depoimento-card { padding:16px; border-radius:16px; background:#fff; text-align:left; box-shadow:0 12px 30px rgba(65,0,11,.08); }
-  .depoimento-card video { width:100%; border-radius:10px; aspect-ratio:9/16; background:#111; object-fit:cover; }
-  .depoimento-card--audio { grid-column:1 / -1; max-width:560px; margin:0 auto 12px; padding:20px 22px; }
-  .depoimento-card--audio audio { width:100%; }
-  .depoimento-card h3 { margin:14px 4px 2px; font-family:'Space Grotesk',Arial,sans-serif; font-size:16px; letter-spacing:-.02em; color:var(--ink); }
-  .depoimento-card p { margin:0 4px; color:var(--muted); font-size:13px; line-height:1.5; }
-  .depoimentos-nota { max-width:720px; margin:34px auto 0; padding:16px 20px; border-radius:12px; background:#fff4f4; color:var(--red-dark); font-size:13px; line-height:1.6; text-align:center; }
-
-  .results { padding:100px 0; background:#fff; text-align:center; }
-  .results-head .eyebrow { justify-content:center; }
-  .results-head .section-title { max-width:none; margin:0 auto; font-size:clamp(28px,3.2vw,42px); letter-spacing:-.045em; }
-  .results-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:18px; max-width:1160px; margin:54px auto 0; }
-  .result-card { margin:0; padding:10px; border:0; border-radius:16px; background:#fafafa; box-shadow:0 12px 30px rgba(65,0,11,.08); overflow:hidden; }
-  .result-card img { width:100%; aspect-ratio:1170/983; object-fit:cover; border-radius:10px; }
-
-  .mentor { padding:120px 0; background:#fff; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
-  .mentor-grid { display:grid; grid-template-columns:minmax(340px,.9fr) 1.1fr; gap:clamp(45px,7vw,100px); align-items:center; }
-  .mentor-photo { position:relative; padding:14px; background:linear-gradient(135deg,var(--red),#ffb8bd); box-shadow:0 24px 55px rgba(236,9,32,.16); }
-  .mentor-photo img { width:100%; aspect-ratio:1/1.12; object-fit:cover; object-position:center; }
-  .mentor-copy .eyebrow { margin-bottom:14px; }
-  .mentor-copy h2 { margin:0 0 18px; font-family:'Space Grotesk',Arial,sans-serif; font-size:clamp(26px,3vw,38px); letter-spacing:-.04em; }
-  .mentor-copy p { color:var(--muted); font-size:16px; line-height:1.7; margin:0 0 16px; }
-  .mentor-copy .btn { margin-top:10px; }
-
-  .vendedor { padding:110px 0; background:var(--red); color:#fff; }
-  .vendedor .eyebrow { color:#ffb8c0; }
-  .vendedor-grid { display:grid; grid-template-columns:.9fr 1.1fr; gap:clamp(45px,8vw,110px); align-items:start; }
-  .vendedor .section-title { max-width:520px; }
-  .vendedor .section-title em { color:#ffd1d6; }
-  .vendedor-copy p { max-width:520px; color:#ffe4e7; font-size:16px; line-height:1.65; margin:22px 0 30px; }
-  .vendedor .btn { margin-top:6px; }
-
-  .oferta { padding:110px 0; background:#fafafa; text-align:center; }
-  .oferta .eyebrow { justify-content:center; }
-  .oferta .section-title { max-width:600px; margin:0 auto; }
-  .oferta-card { max-width:560px; margin:44px auto 0; padding:34px; border-radius:18px; background:#fff; box-shadow:var(--shadow); }
-  .oferta-card ul { list-style:none; margin:18px 0 28px; padding:0; text-align:left; display:inline-block; }
-  .oferta-card li { position:relative; padding-left:26px; margin-bottom:10px; color:var(--muted); font-size:14px; line-height:1.5; }
-  .oferta-card li::before { content:'✓'; position:absolute; left:0; color:var(--red); font-weight:700; }
-  .preco-bloco { padding-bottom:20px; border-bottom:1px solid var(--line); }
-  .preco { margin:0; font-family:'Space Grotesk',Arial,sans-serif; font-size:58px; line-height:1; letter-spacing:-.05em; color:var(--ink); }
-  .preco small { margin-right:4px; font-size:24px; font-weight:600; color:var(--muted); }
-  .preco-caption { margin:10px 0 0; color:var(--muted); font-size:13px; }
-  .preco-nota { margin:16px 0 0; color:var(--muted); font-size:12px; line-height:1.5; }
-
-  .faq { padding:110px 0; background:#fff; }
-  .faq-head { text-align:center; }
-  .faq-head .eyebrow { justify-content:center; }
-  .faq-head .section-title { max-width:none; margin:0 auto; }
-  .faq-list { max-width:760px; margin:46px auto 0; border-top:1px solid var(--line); }
-  .faq-item { padding:22px 0; border-bottom:1px solid var(--line); }
-  .faq-item summary { cursor:pointer; font-family:'Space Grotesk',Arial,sans-serif; font-size:17px; letter-spacing:-.02em; list-style:none; display:flex; justify-content:space-between; align-items:center; }
-  .faq-item summary::-webkit-details-marker { display:none; }
-  .faq-item summary::after { content:'+'; color:var(--red); font-size:20px; }
-  .faq-item[open] summary::after { content:'−'; }
-  .faq-item p { margin:14px 0 0; color:var(--muted); font-size:14px; line-height:1.6; }
-
-  footer { padding:36px 0; background:var(--red-deep); color:#ffd4d8; font-size:12px; text-align:center; }
-
-  @media (max-width:1040px) {
-    .depoimentos-grid { grid-template-columns:repeat(2,minmax(0,1fr)); max-width:760px; }
-  }
-  @media (max-width:860px) {
-    .audience-grid, .results-grid, .mentor-grid, .vendedor-grid { grid-template-columns:1fr; }
-    .results-grid { grid-template-columns:repeat(2,1fr); }
-  }
-  @media (max-width:620px) {
-    .depoimentos-grid { grid-template-columns:1fr; max-width:380px; }
-    .results-grid { grid-template-columns:1fr; max-width:420px; }
-  }
-
-  /* ============ GARANTIA 7 DIAS (modelo da /vsl-longa-livre, tema claro) ============ */
-  .gar { padding:90px 0; background:#fff; }
-  .gar-box { display:grid; grid-template-columns:200px 1fr; align-items:center; gap:clamp(26px,4vw,52px); max-width:960px; margin:0 auto; padding:clamp(26px,4vw,48px); border:1px solid var(--line); border-radius:26px; background:radial-gradient(120% 140% at 0% 0%, rgba(236,9,32,.10), rgba(236,9,32,.02) 55%, transparent), #fffafa; box-shadow:0 30px 70px rgba(65,0,11,.10); }
-  .gar .seal { width:100%; height:auto; overflow:visible; filter:drop-shadow(0 18px 40px rgba(236,9,32,.28)); }
-  .gar .seal-ring { transform-origin:100px 100px; animation:gar-spin 40s linear infinite; }
-  @keyframes gar-spin { to { transform:rotate(360deg); } }
-  @media (prefers-reduced-motion: reduce) { .gar .seal-ring { animation:none; } }
-  .gar-tag { display:inline-block; color:var(--red); font-size:12px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; }
-  .gar h2 { margin:12px 0 0; font-family:'Space Grotesk',Arial,sans-serif; font-size:clamp(26px,3.2vw,40px); line-height:1.05; letter-spacing:-.04em; color:var(--ink); }
-  .gar h2 em { color:var(--red); font-style:normal; }
-  .gar-lead { margin:14px 0 0; color:var(--muted); font-size:16px; line-height:1.65; }
-  .gar-points { display:grid; gap:10px; margin:20px 0 0; padding:0; list-style:none; }
-  .gar-points li { display:flex; align-items:center; gap:10px; color:var(--ink); font-size:15px; }
-  .gar-points svg { flex:0 0 auto; width:20px; height:20px; color:var(--red); }
-  @media (max-width:760px) {
-    .gar { padding:64px 0; }
-    .gar-box { grid-template-columns:1fr; gap:20px; text-align:center; }
-    .gar-seal { width:150px; margin:0 auto; }
-    .gar-points { width:fit-content; margin-inline:auto; text-align:left; }
-  }
-</style>
+<link rel="stylesheet" href="/static/webinar/webinar.css">
+<link rel="preload" href="/static/webinar/fonts/montserrat-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/static/webinar/typography.css">
+<link rel="stylesheet" href="/static/formacao-pro/vendas.css?v=20261110-webinar">
 <script id="hotmart_launcher_script">
 (function(l,a,u,n,c,h,e,r){l['HotmartLauncherObject']=c;l[c]=l[c]||function(){
 (l[c].q=l[c].q||[]).push(arguments)},l[c].l=1*new Date();h=a.createElement(u),
@@ -174,34 +32,30 @@ hot('account','80ba8e3d-2519-3528-ba76-f34c2f54c1b6');
 <meta property="og:url" content="https://lp.deliveryelite.com.br/formacao-pro">
 <meta property="og:image" content="https://lp.deliveryelite.com.br/static/img/foto-eric.webp">
 <script defer src="/static/formacao-pro/vendas.js?v=20261110-bumps"></script>
-<style>
- .nav-link:focus-visible,.btn:focus-visible,summary:focus-visible {outline:3px solid #ffbdc3;outline-offset:5px}
- .skip {position:absolute;top:-100px;left:20px;z-index:10;background:#fff;padding:12px;color:#41000b}.skip:focus{top:12px}
- .hero-content{max-width:820px}.hero-content p{max-width:690px}.hero-note{flex-wrap:wrap;line-height:1.6}
- .pro-program{padding:90px 0;background:#fff}.pro-program .section-title{max-width:760px}.program-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:36px;padding:0;list-style:none}.program-grid li{padding:20px 22px;border:1px solid var(--line);border-radius:12px;display:flex;gap:18px;align-items:center}.program-grid span{font-family:'Space Grotesk',sans-serif;font-size:26px;color:var(--red)}.program-grid h3{font-size:16px;margin:0}
- .pro-included{padding:90px 0;background:#fff5f6}.pro-included .audience-grid{max-width:none;border-radius:16px;overflow:hidden}.pro-included .audience-item{padding:32px}.pro-included .section-lead{max-width:780px}.future{display:inline-block;margin-top:14px;color:var(--red-dark);font-size:13px;font-weight:700}.pro-included .audience-item p+p{margin-top:12px}
- .depoimentos-head .section-lead{margin-inline:auto}.pro-note{max-width:820px;margin:24px auto 0;color:var(--muted);font-size:14px;line-height:1.65}.results img{height:auto}.mentor-photo img{height:auto}.btn{font-family:inherit;cursor:pointer}.preco{font-size:clamp(48px,10vw,64px)}.parcelas{font-size:18px;line-height:1.5;margin:20px 0 4px;font-weight:700}.price-total{font-size:13px;line-height:1.6;color:var(--muted)}.purchase-status{line-height:1.6}.faq-item summary{gap:18px}.faq-item summary::after{flex-shrink:0}.guarantee-cta{display:inline-block;margin-top:22px}
- dialog{border:1px solid var(--line);border-radius:20px;max-width:520px;width:calc(100% - 32px);padding:40px;box-shadow:var(--shadow);color:var(--ink)}dialog::backdrop{background:rgba(23,17,22,.7)}dialog h2{font-family:'Space Grotesk',sans-serif;font-size:30px;letter-spacing:-.04em}dialog p{line-height:1.7}dialog .close{position:absolute;right:14px;top:10px;background:none;border:0;font-size:30px;cursor:pointer}dialog .btn{margin-top:15px}.footer-note{margin:12px auto 0;max-width:700px;line-height:1.65}
- @media(max-width:620px){.hero{padding-top:105px}.hero-nav{padding:20px 0}.hero-nav img{height:46px}.hero-content{margin-top:35px;margin-bottom:64px}.hero-content p{font-size:16px}.hero h1{font-size:36px}.program-grid{grid-template-columns:1fr}.intro,.depoimentos,.results,.mentor,.oferta,.faq,.pro-included,.pro-program{padding-top:64px;padding-bottom:64px}.oferta-card{padding:28px 22px}.hero-nav .nav-link{font-size:12px!important}.pro-included .audience-item{padding:26px}.mentor-grid{gap:32px}.faq-item summary{line-height:1.5}dialog{padding:30px 24px}}
- @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn--animated,.hero-marquee-track{animation:none}}
-</style>
 </head>
-<body data-page-version="pro-formacao-20261110">
+<body class="pro-page" data-page-version="pro-webinar-20261110">
 <a class="skip" href="#conteudo">Ir para o conteúdo</a>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WG68M2TS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<header class="nav wrap">
+ <a class="brand" href="#conteudo" aria-label="Delivery Elite — início"><img src="/static/img/logo-mark.png" width="600" height="454" alt="Delivery Elite"></a>
+ <nav class="nav-links" aria-label="Navegação da Formação PRO"><a href="#entrega">O conteúdo</a><a href="#programa">A Formação</a><a class="nav-cta" href="#oferta" data-cta="pro_topo" onclick="trackCTA('pro_topo')">Conhecer a PRO <span aria-hidden="true">↗</span></a></nav>
+</header>
 <main id="conteudo">
-<section class="hero">
- <div class="wrap hero-nav"><img src="/static/img/logo-mark.png" width="60" height="60" alt="Delivery Elite"><a href="#oferta" class="nav-link" style="color:#fff;font-size:13px;font-weight:700;text-decoration:none" data-cta="pro_topo" onclick="trackCTA('pro_topo')">Conhecer a Formação PRO ›</a></div>
- <div class="wrap hero-content"><span class="hero-tag">FORMAÇÃO GESTORES DE DELIVERY PRO</span>
- <h1>Aprenda a analisar lojas e atuar como <span>gestor de delivery.</span></h1>
- <p>Da operação à prospecção: estude com Eric Roza a gestão no iFood, 99Food e Keeta, acompanhe análises de lojas e desenvolva critérios para decidir o que fazer em cada operação.</p>
- <a href="#oferta" class="btn btn--light btn--animated" data-cta="pro_hero" onclick="trackCTA('pro_hero')">Quero conhecer a Formação PRO ›</a>
- <div class="hero-note">Aulas gravadas · Análises de lojas · Garantia de 7 dias</div></div>
- <div class="hero-marquee"><div class="hero-marquee-track"><span>IFOOD, 99FOOD E KEETA</span><span>FORMAÇÃO + ANÁLISES DE LOJAS</span><span>COM ERIC ROZA</span><span>IFOOD, 99FOOD E KEETA</span><span>FORMAÇÃO + ANÁLISES DE LOJAS</span><span>COM ERIC ROZA</span></div></div>
+<section class="hero wrap" aria-labelledby="pro-titulo">
+ <div class="hero-copy">
+  <p class="eyebrow"><span class="dot" aria-hidden="true"></span> FORMAÇÃO GESTORES DE DELIVERY PRO</p>
+  <h1 class="hero-title" id="pro-titulo"><span class="event-name">FORMAÇÃO<span>DELIVERY PRO</span></span><span class="hero-promise">Aprenda a analisar lojas e atuar como <em>gestor de delivery.</em></span></h1>
+  <p class="lead">Da operação à prospecção: estude com Eric Roza a gestão no iFood, 99Food e Keeta, acompanhe análises de lojas e desenvolva critérios para decidir o que fazer em cada operação.</p>
+  <div class="event-meta"><p><strong>08 AULAS</strong><span>A base da Formação</span></p><p><strong>ANÁLISES</strong><span>Lojas na prática</span></p><p><strong>7 DIAS</strong><span>De garantia</span></p></div>
+  <a href="#oferta" class="button" data-cta="pro_hero" onclick="trackCTA('pro_hero')">Quero conhecer a Formação PRO <span aria-hidden="true">↗</span></a>
+  <p class="micro">Aulas gravadas · Análises de lojas · Com Eric Roza</p>
+ </div>
+ <figure class="hero-photo"><div class="portrait-orbit" aria-hidden="true"></div><img src="/static/webinar/eric-retrato.webp" width="1086" height="1448" fetchpriority="high" alt="Eric Roza, professor da Formação Gestores de Delivery PRO"><figcaption><span>COM QUEM VIVE A GESTÃO</span><strong>Eric Roza</strong><span>Gestão de delivery · Formação de gestores</span></figcaption></figure>
 </section>
-<section class="intro"><div class="wrap intro-head"><div class="eyebrow">Para quem é</div><h2 class="section-title">Um próximo passo pra quem quer <em>trabalhar com gestão.</em></h2></div>
+<div class="trust-strip wrap"><span>GESTÃO NA PRÁTICA</span><p>iFood</p><span class="strip-cross" aria-hidden="true">+</span><p>99Food</p><span class="strip-cross" aria-hidden="true">+</span><p>Keeta</p><span class="strip-end">Da operação à prospecção.</span></div>
+<section class="intro"><div class="wrap"><div class="intro-head"><div class="eyebrow">Para quem é</div><h2 class="section-title">Um próximo passo pra quem quer <em>trabalhar com gestão.</em></h2></div>
  <div class="audience-grid"><article class="audience-item"><strong>Quero começar</strong><p>Aprender o funcionamento das plataformas e entender como prestar um <b>serviço de gestão de delivery</b>.</p></article><article class="audience-item"><strong>Já atendo negócios</strong><p>Adicionar a gestão de delivery ao trabalho de marketing, usando critérios para <b>analisar e priorizar ações</b>.</p></article><article class="audience-item"><strong>Já gerencio lojas</strong><p>Comparar seu raciocínio com as aulas e os exemplos do Eric para <b>organizar a rotina de gestão</b>.</p></article><article class="audience-item"><strong>Tenho uma operação</strong><p>Entender visibilidade, conversão e saúde financeira para <b>acompanhar melhor a própria loja</b>.</p></article></div>
-</section>
+</div></section>
 <section class="pro-included" id="entrega"><div class="wrap"><div class="eyebrow">O que está incluído</div><h2 class="section-title">A base da Formação.<br>Mais exemplos para <em>levar à prática.</em></h2><p class="section-lead">A Formação e as análises gravadas já estão disponíveis. As aulas adicionais de farmácia e IA serão liberadas posteriormente, com datas a confirmar.</p>
  <div class="audience-grid"><article class="audience-item"><strong>01. Formação de gestores</strong><p>Oito aulas, da operação nas plataformas à prospecção e venda do serviço de gestão.</p><a class="future" href="#programa">Conhecer o programa ↓</a></article><article class="audience-item"><strong>02. Análises gravadas de lojas</strong><p>Acompanhe como o Eric observa uma operação e transforma o diagnóstico em direcionamento.</p><p>Biblioteca de exemplos para estudo. Não inclui análise individual da sua loja.</p></article><article class="audience-item"><strong>03. Gestão para farmácias</strong><p>Aula adicional para estudar a aplicação da gestão no contexto de farmácias nas plataformas de delivery.</p><span class="future">Liberação posterior. Data a confirmar.</span></article><article class="audience-item"><strong>04. IA aplicada à gestão</strong><p>Aula adicional sobre inteligência artificial como apoio ao trabalho de gestão de delivery.</p><span class="future">Liberação posterior. Data a confirmar.</span><p>O agente ChatGPT será disponibilizado por Eric no grupo. O acesso ao agente e a aula de IA são entregas distintas.</p></article></div>
  </div></section>
@@ -308,9 +162,9 @@ hot('account','80ba8e3d-2519-3528-ba76-f34c2f54c1b6');
   </section>
 
 
-<section class="oferta" id="oferta"><div class="wrap"><div class="eyebrow">Seu próximo passo</div><h2 class="section-title">Entre na Formação <em>Gestores de Delivery PRO.</em></h2><p class="section-lead">Aulas para construir a base. Análises para acompanhar a aplicação. Novas aulas para ampliar o aprendizado.</p>
+<section class="oferta" id="oferta"><div class="wrap offer-layout"><div class="offer-copy"><div class="eyebrow">Seu próximo passo</div><h2 class="section-title">Entre na Formação <em>Gestores de Delivery PRO.</em></h2><p class="section-lead">Aulas para construir a base. Análises para acompanhar a aplicação. Novas aulas para ampliar o aprendizado.</p></div>
  <div class="oferta-card"><div class="preco-bloco"><p class="preco"><small>R$</small>1.470</p><p class="preco-caption">À vista no cartão de crédito ou Pix</p><p class="parcelas">Ou 12x de R$152,03 com acréscimo</p><p class="price-total">Total parcelado: R$1.824,36. Confira as condições no checkout.</p></div><ul><li>As oito aulas da Formação de Gestores</li><li>Análises de lojas já gravadas</li><li>Aula de gestão para farmácias, com liberação posterior</li><li>Aula de IA aplicada à gestão, com liberação posterior</li><li>Garantia de sete dias após a compra</li></ul><button type="button" id="comprar" class="btn btn--animated" style="width:100%">Quero entrar na Formação PRO ›</button><p class="preco-nota purchase-status" id="purchase-status">Inscrições abertas durante a aula de 10/11, às 20h.</p><p class="preco-nota">Mentoria individual, análise personalizada e mastermind são contratações opcionais, separadas da Formação PRO.</p></div></div></section>
-<section class="faq"><div class="wrap faq-head"><div class="eyebrow">Perguntas frequentes</div><h2 class="section-title">Antes de dar o próximo passo.</h2></div><div class="wrap faq-list">
+<section class="faq"><div class="wrap faq-layout"><div class="faq-head"><div class="eyebrow">Perguntas frequentes</div><h2 class="section-title">Antes de dar o próximo passo.</h2></div><div class="faq-list">
 <details class="faq-item"><summary>Preciso ter um restaurante ou experiência prévia?</summary><p>Não é necessário ter uma loja. As aulas incluem temas de operação, prospecção e venda do serviço de gestão. Quem já tem ou atende uma operação também pode estudar o conteúdo.</p></details>
 <details class="faq-item"><summary>O que recebo ao comprar a PRO?</summary><p>As oito aulas da Formação e as análises gravadas de lojas já estão disponíveis. As aulas adicionais de farmácia e IA aplicada à gestão serão liberadas depois, com datas a confirmar.</p></details>
 <details class="faq-item"><summary>Como recebo o acesso?</summary><p>Após a confirmação do pagamento, a Hotmart envia as instruções para o e-mail informado na compra. Use um endereço que você acompanha e confira também a pasta de spam.</p></details>
@@ -319,8 +173,8 @@ hot('account','80ba8e3d-2519-3528-ba76-f34c2f54c1b6');
 <details class="faq-item"><summary>Quais são as condições de pagamento?</summary><p>R$1.470 à vista no cartão ou Pix. No cartão, até 12x de R$152,03 com acréscimo, total de R$1.824,36. As condições e os meios disponíveis devem ser conferidos no checkout.</p></details>
 <details class="faq-item"><summary>Será possível pagar por boleto?</summary><p>A abertura usa cartão de crédito e Pix. A liberação de boleto está prevista para 13/11/2026 às 20h, horário de Brasília, sujeita à ativação na Hotmart. Confira os meios disponíveis no checkout.</p></details>
 <details class="faq-item"><summary>Qual é a garantia?</summary><p>Você tem sete dias após a compra para solicitar o reembolso pelos canais da Hotmart.</p></details>
-</div></section>
-</main><footer>Delivery Elite · Formação Gestores de Delivery PRO · Eric Roza<p class="wrap footer-note">Depoimentos e registros ilustram experiências individuais. O aprendizado e os resultados dependem da aplicação e da realidade de cada operação. Não há garantia de renda ou faturamento.</p></footer>
+</div></div></section>
+</main><footer><div class="wrap footer-layout"><div><span class="footer-brand">DELIVERY ELITE</span><p>Formação Gestores de Delivery PRO · Eric Roza</p></div><p class="footer-note">Depoimentos e registros ilustram experiências individuais. O aprendizado e os resultados dependem da aplicação e da realidade de cada operação. Não há garantia de renda ou faturamento.</p></div></footer>
 <dialog id="aviso" aria-labelledby="aviso-titulo"><button class="close" type="button" aria-label="Fechar aviso">×</button><p class="eyebrow">FORMAÇÃO PRO</p><h2 id="aviso-titulo">As inscrições abrem durante a aula.</h2><p>A apresentação da oferta acontece na live de 10/11, a partir das 20h, no YouTube. Acompanhe a transmissão pelo <a href="https://www.youtube.com/live/YhS-BoA8MwY" target="_blank" rel="noopener">YouTube do Eric</a>.</p><button class="btn close-dialog" type="button">Entendi</button></dialog>
 </body>
 </html>
